@@ -7,21 +7,7 @@ import pages.RolePage;
 
 import static io.qameta.allure.Allure.step;
 
-public class MainPageTest extends BaseTest{
-
-    @Test
-    @DisplayName("Проверка списка преимуществ")
-    void checkAdvantagesBlock() {
-        step("Открыть главную страницу", () -> {
-            mainPage
-                    .openPage()
-                    .removeBanners();
-        });
-        step("Проверить видимость и список блока преимуществ ");
-        mainPage.checkBlock("Курсы входят в перечень ЭОР Минпросвещения России",
-                "88% школ страны используют Учи.ру", "Материалы соответствуют ФГОС и ФООП");
-    }
-
+public class MainPageTest extends BaseTest {
     @Test
     @DisplayName("Войти в систему с невалидными данными учителя")
     void signInWithInvalidData() {
@@ -44,6 +30,19 @@ public class MainPageTest extends BaseTest{
         step("Проверка текста ошибки валидации", () -> {
             mainPage.checkValidationTextError(testData.validationTextError);
         });
+    }
+
+    @Test
+    @DisplayName("Проверка списка преимуществ")
+    void checkAdvantagesBlock() {
+        step("Открыть главную страницу", () -> {
+            mainPage
+                    .openPage()
+                    .removeBanners();
+        });
+        step("Проверить видимость и список блока преимуществ ");
+        mainPage.checkBlock("Курсы входят в перечень ЭОР Минпросвещения России",
+                "88% школ страны используют Учи.ру", "Материалы соответствуют ФГОС и ФООП");
     }
 
     @Test

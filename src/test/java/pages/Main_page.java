@@ -24,7 +24,7 @@ public class Main_page {
 
     @Step("Перейти на главную страницу сайта https://uchi.ru/")
     public Main_page openPage() {
-        open(mainPageUrl);
+        open("https://uchi.ru/");
         return this;
     }
 
