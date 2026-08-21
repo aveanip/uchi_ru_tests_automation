@@ -10,7 +10,6 @@ import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
 public class Main_page {
-    private String mainPageUrl = "https://uchi.ru/";
     private final SelenideElement registrationButton = $(byText("Зарегистрироваться"));
     private final SelenideElement advantagesBlock = $(".Facts_wrapper__C0PWW");
     private final SelenideElement login = $("#login");
@@ -103,6 +102,6 @@ public class Main_page {
     @Step("Проверить ответ поиска {value}")
     public Main_page verifyArticleFound(String value) {
         searchResponse.shouldHave(text(value));
-return this;
+        return this;
     }
 }

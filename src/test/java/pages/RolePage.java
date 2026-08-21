@@ -13,7 +13,6 @@ import static com.codeborne.selenide.Selenide.*;
 
 public class RolePage extends TestData {
 
-    private static String rolePageUrl = "signin/main/new";
     private SelenideElement teacherСard = $(".styles__Card-sc-1xasq8v-4.bDDpON");
     private SelenideElement headTeacherСard = $(".styles__Card-sc-1xasq8v-4.kwHCkx");
     private SelenideElement studentСard = $(".styles__Card-sc-1xasq8v-4.hYjCMA");

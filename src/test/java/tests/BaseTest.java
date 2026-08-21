@@ -23,16 +23,14 @@ public class BaseTest {
     RolePage rolePage = new RolePage();
     TestData testData = new TestData();
 
-//    static String mainPageUrl = "https://uchi.ru/";
     @BeforeAll
     static void beforeAll() {
         Configuration.baseUrl = System.getProperty("baseUrl");
         Configuration.browser = System.getProperty("browser");
         Configuration.browserSize = System.getProperty("browserSize");
         Configuration.browserVersion = System.getProperty("browserVersion");
-        Configuration.headless = Boolean.parseBoolean(System.getProperty("headless", "false"));
 
-        String selenoidUrl= System.getProperty("selenoidUrl");
+        String selenoidUrl = System.getProperty("selenoidUrl");
         if (selenoidUrl == null || selenoidUrl.isEmpty() || "null".equals(selenoidUrl)) {
             selenoidUrl = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
         }
@@ -48,6 +46,7 @@ public class BaseTest {
         ));
         Configuration.browserCapabilities = capabilities;
     }
+
     @BeforeEach
     public void setUp() {
         SelenideLogger.addListener("allure", new AllureSelenide()
@@ -59,8 +58,9 @@ public class BaseTest {
     void afterEach() {
         closeWebDriver();
     }
+
     @AfterEach
-    void addAttachments(){
+    void addAttachments() {
         Attach.screenshotAs("Last screenshot");
         Attach.pageSource();
 //        Attach.attachAsText("Some file", "Some content");
